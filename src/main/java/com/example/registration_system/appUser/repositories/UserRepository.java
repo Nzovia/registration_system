@@ -1,12 +1,13 @@
-package com.example.registration_system.repositories;
+package com.example.registration_system.appUser.repositories;
 import com.example.registration_system.appUser.AppUser;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Repository
-@Transactional
+@Transactional(readOnly = true)
 public interface UserRepository {
     Optional<AppUser> findByEmail(String email);
 }

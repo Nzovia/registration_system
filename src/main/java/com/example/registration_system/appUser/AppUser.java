@@ -9,9 +9,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
 
-@Getter
-@Setter
-@Data
+@Data  //@Data is like having implicit @Getter, @Setter, @ToString, @EqualsAndHashCode and @RequiredArgsConstructor
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
