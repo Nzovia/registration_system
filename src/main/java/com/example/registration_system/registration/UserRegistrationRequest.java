@@ -1,10 +1,10 @@
 package com.example.registration_system.registration;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
+@EqualsAndHashCode
+@ToString
 @AllArgsConstructor
 public class UserRegistrationRequest {
     private final String fName;

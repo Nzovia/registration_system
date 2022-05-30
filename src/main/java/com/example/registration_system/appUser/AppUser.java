@@ -26,7 +26,8 @@ public class AppUser implements UserDetails {
             generator = "student_sequence"
     )
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -34,14 +35,14 @@ public class AppUser implements UserDetails {
     private boolean locked;
     private boolean enabled;
 
-    //parameterized constructure with the id parameter because it is auto-generated
-    public AppUser(String name, String email, String password, AppUserRole appUserRole, boolean locked, boolean enabled) {
-        this.name = name;
+    //parameterized constructor with the id parameter because it is auto-generated
+    public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-        this.locked = locked;
-        this.enabled = enabled;
     }
 
     @Override
@@ -57,7 +58,7 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return name;
+        return email;
     }
 
     @Override
